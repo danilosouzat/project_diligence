@@ -1,0 +1,1 @@
+json.array! @correspondentes, partial: 'correspondentes/correspondente', as: :correspondente

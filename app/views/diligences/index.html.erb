@@ -1,0 +1,49 @@
+<%- model_class = Diligence -%>
+<div class="page-header">
+  <h1> Diligencias </h1>
+</div>
+<table class="table table-striped">
+  <thead>
+  <div class="row">
+    <tr>
+      <!--<th><#%= model_class.human_attribute_name(:id) %></th>-->
+      <th class="col-md-2"><%= model_class.human_attribute_name(:titulo) %></th>
+      <th class="col-md-3"><%= model_class.human_attribute_name(:corpo) %></th>
+      <th class="col-md-1"><%= model_class.human_attribute_name(:status) %></th>
+      <th class="col-md-2"><%= model_class.human_attribute_name(:data_inicio) %></th>
+      <th class="col-md-2"><%= model_class.human_attribute_name(:data_fim) %></th> 
+      <th class="col-md-4">Opções</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @diligences.each do |diligence| %>
+      <tr>
+        <!--<td><#%= link_to diligence.id, diligence_path(diligence) %></td>-->''
+        <td class="col-md-0"><%= diligence.titulo %></td>
+        <td class="col-md-3"><%= diligence.corpo %></td>
+        <td class="col-md-1"><%= diligence.status %></td>
+        <td class="col-md-2"><%= diligence.data_inicio %></td>
+        <td class="col-md-2"><%= diligence.data_fim %></td>
+        <td>
+ 
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      diligence_path(diligence), :class => 'btn btn-default btn-xs', :class => 'btn btn-xs btn-success' %>
+
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_diligence_path(diligence), :class => 'btn btn-default btn-xs' %>
+
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      diligence_path(diligence),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+      </div>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_diligence_path,
+            :class => 'btn btn-primary' %>

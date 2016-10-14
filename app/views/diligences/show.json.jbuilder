@@ -1,0 +1,1 @@
+json.partial! "diligences/diligence", diligence: @diligence

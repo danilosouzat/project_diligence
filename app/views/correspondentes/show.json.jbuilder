@@ -1,0 +1,1 @@
+json.partial! "correspondentes/correspondente", correspondente: @correspondente

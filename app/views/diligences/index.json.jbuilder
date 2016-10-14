@@ -1,0 +1,1 @@
+json.array! @diligences, partial: 'diligences/diligence', as: :diligence
